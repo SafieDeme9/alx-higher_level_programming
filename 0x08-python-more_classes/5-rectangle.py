@@ -41,34 +41,27 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        return (self.__width * self.__height)
+        return self.__width * self.__height
 
     def perimeter(self):
         if self.__width == 0 or self.__height == 0:
             return (0)
-        return ((self.__width * 2) + (self.__height * 2))
+        return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
         """Return the printable representation of the Rectangle.
         Represents the rectangle with the # character.
         """
-        if self.__width == 0 or self.__height == 0:
-            return ("")
-
-        rect = []
-        for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-        return ("".join(rect))
+        if not self.__width or not self.__height:
+            return ""
+        return (("#" * self.__width + "\n") * self.height)[:-1]
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
         rect = "Rectangle(" + str(self.__width)
         rect += ", " + str(self.__height) + ")"
-        return (rect)
+        return rect
 
     def __del__(self):
         """Print message for deletion"""
         print("Bye rectangle...")
-
