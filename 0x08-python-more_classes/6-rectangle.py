@@ -4,12 +4,12 @@
 
 class Rectangle:
     """Rectangle class.
-
     Attributes:
     number_of_instances (int): The number of Rectangle instances.
     """
 
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """Initialize a new Rectangle.
         Args:
@@ -18,7 +18,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        self.number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -51,7 +51,7 @@ class Rectangle:
 
     def perimeter(self):
         if self.__width == 0 or self.__height == 0:
-            return (0)
+            return 0
         return (self.__width * 2) + (self.__height * 2)
 
     def __str__(self):
@@ -70,5 +70,6 @@ class Rectangle:
 
     def __del__(self):
         """Print message for deletion"""
-        self.number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
+
