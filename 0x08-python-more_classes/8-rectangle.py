@@ -62,7 +62,8 @@ class Rectangle:
         """
         if not self.__width or not self.__height:
             return ""
-        return ((str(self.print_symbol) * self.__width + "\n") * self.height)[:-1]
+        return ((str(self.print_symbol) * self.__width + "\n") *
+                self.height)[:-1]
 
     def __repr__(self):
         """Return the string representation of the Rectangle."""
@@ -85,4 +86,3 @@ class Rectangle:
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
-
