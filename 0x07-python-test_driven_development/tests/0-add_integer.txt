@@ -1,0 +1,57 @@
+===========================
+The ``add_integer`` module
+===========================
+
+This module defines the sum of two integers
+
+Usage
+===========================
+
+``add_integer(...)``` returns the addition of its two arguments. For numbers,
+that value is equivalent to using the ``+`` operator.
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(1, 2)
+	3
+
+Test two floats
+	>>> add_integer(1.0, 2.0)
+	3
+
+Test one int and float
+
+	>>> add_integer(1, 2.5)
+	3
+
+Test one integer
+
+	>>> add_integer(1)
+	99
+
+Test positive float negative int
+	>>> add_integer(2.3, -3)
+	-1
+
+Test infinity
+
+	>>> add_integer(float('inf'))
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
+
+Non numbers tests
+===================
+
+Test one of the argument is a string
+
+	>>> add_integer("a", 2)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+Test one of the arguments is not provided
+
+	>>> add_integer(None, 2)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
