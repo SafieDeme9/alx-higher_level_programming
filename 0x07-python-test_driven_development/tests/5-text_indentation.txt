@@ -1,0 +1,48 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation("Hello world. How are you today?")
+Hello world.
+
+How are you today?
+>>> text_indentation("    Hello world.   How are you today?")
+Hello world.
+
+How are you today?
+>>> text_indentation("Hello world. How are you today?    ")
+Hello world.
+
+How are you today?
+>>> text_indentation("Hello world. How are you today?   ")
+Hello world.
+
+How are you today?
+>>> text_indentation("Hello world.   How are you today?")
+Hello world.
+
+How are you today?
+>>> text_indentation("Hello world. How are you today?\n\nI am fine.")
+Hello world.
+
+How are you today?
+
+I am fine.
+>>> text_indentation("Hello world. How are you today?\nI am fine.")
+Hello world.
+
+How are you today?
+I am fine.
+>>> text_indentation("Hello world. How are you today?   \n\nI am fine.")
+Hello world.
+
+How are you today?
+
+I am fine.
+>>> text_indentation("Hello world. How are you today?   \nI am fine.")
+Hello world.
+
+How are you today?
+I am fine.
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
