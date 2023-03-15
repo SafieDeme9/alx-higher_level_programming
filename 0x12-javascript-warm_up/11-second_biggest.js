@@ -1,4 +1,5 @@
 #!/usr/bin/node
+
 const integers = process.argv.slice(2);
 let firstMax, secondMax;
 if (integers.length > 1) {
